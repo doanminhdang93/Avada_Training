@@ -64,14 +64,15 @@ const getPostById = async (id) => {
     const userWithTheMostComments = userReformated.reduce((prev,curr) =>
         prev.commentsCount > curr.commentsCount ? prev : curr
     )
-    // console.log(userWithTheMostComments);
+    console.log(userWithTheMostComments);
     const userWithTheMostPosts = userReformated.reduce((prev,curr) =>
         prev.postsCount > curr.postsCount ? prev : curr
     )
     console.log(userWithTheMostPosts);
 
     // Sort the list of users by the postsCount value descending?
-    const usersSortedByPostsCount = userReformated.sort((a,b) => b.postsCount - a.postsCount);
+    const temp = userReformated;
+    const usersSortedByPostsCount = temp.sort((a,b) => b.postsCount - a.postsCount);
     console.log(usersSortedByPostsCount);
 
     // Get the post with ID of 1 via API request, at the same time get comments for post ID of 1 via another API request. 
